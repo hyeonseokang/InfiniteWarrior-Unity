@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿// 곧 지워질 예정 PlayerInfo 클래스로 대체
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
