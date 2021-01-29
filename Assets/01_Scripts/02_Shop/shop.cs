@@ -12,7 +12,6 @@ public class shop : MonoBehaviour
     public item[] items;
     private GameObject[] lockBlocks;
 
-    public GameObject shopPanel;
     public GameObject ItemPanel;
     public GameObject lockBlockPrefab;
 
@@ -46,7 +45,7 @@ public class shop : MonoBehaviour
     }
     public void onClickExitShop()
     {//나가기 버튼 클릭
-             shopPanel.SetActive(false);
+
     }
     public void onClickBuyingButton()
     {
