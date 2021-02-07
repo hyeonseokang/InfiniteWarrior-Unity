@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IMonster
 {
-    public void Hit();
+    void Hit();
 }
 
 public abstract class Monster : MonoBehaviour, IMonster
