@@ -1,14 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+using TMPro;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
+
+    public TextMeshProUGUI coinText;
+    public TextMeshProUGUI playcountText;
+    public TextMeshProUGUI bestscoreText;
+
+    public Image characterImage;
+
     public GameObject shopPanel;
     public GameObject optionPanel;
     // Start is called before the first frame update
     void Start()
     {
+       // characterImage.sprite=
+        coinText.SetText(GameManager.Instance.coin+" 원");
+        bestscoreText.SetText("최고점수 :" + PlayerInfo.Instance.bestScore);
+        playcountText.SetText("플레이 횟수 :" + PlayerInfo.Instance.playCount);
         
     }
 
@@ -23,7 +38,7 @@ public class MainManager : MonoBehaviour
     }
     public void onClickPlayButton()
     {
-
+        SceneManager.LoadScene("02_InGame");
     }
     public void onClickOptionButton()
     {
