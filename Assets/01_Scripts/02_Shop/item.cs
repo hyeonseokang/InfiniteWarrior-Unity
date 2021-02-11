@@ -10,7 +10,7 @@ public class item : MonoBehaviour
     public shop shoppingManager;
 
     public int id;
-    public string name;
+    public string itemname;
     public int price;
     public int speed;
     public ItemState state = ItemState.none;

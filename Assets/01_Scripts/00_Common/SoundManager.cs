@@ -17,7 +17,8 @@ public class SoundManager : Singleton<SoundManager>
 
     private void Start()
     {
-        if(bgmAudioSource == null)
+
+        if (bgmAudioSource == null)
         {
             bgmAudioSource = CreateAudioSource("bgmAudioSource");
             bgmAudioSource.loop = true;
