@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    protected int hp;
+    protected int hp = 3;
     private float attackDistance = 5.0f;
+
+    public int GetHP()
+    {
+        return hp;
+    }
 
     public  void Attack()
     {
@@ -16,7 +21,8 @@ public class Character : MonoBehaviour
         {
             if (hit.collider.CompareTag("monster"))
             {
-                Monster monster = hit.collider.GetComponent<Monster>();
+                GameObject checkObject = hit.collider.gameObject;
+                IMonster monster = Monster.CheckMonster(checkObject);
                 monster.Hit();
             }
         }
@@ -25,5 +31,14 @@ public class Character : MonoBehaviour
     public  void Move()
     {
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("obstacle"))
+        {
+            hp -= 1;
+            InGameEventService.Instance.hitCharacterEvent();
+        }
     }
 }

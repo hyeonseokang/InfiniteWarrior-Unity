@@ -5,7 +5,6 @@ using TMPro;
 
 public class shop : MonoBehaviour
 {
-    public int coin = 100;
     public int currentPlayerCharacter;//현재 
     public int currentSelectedCharacter;//선택된 캐릭터
 
@@ -21,7 +20,6 @@ public class shop : MonoBehaviour
     ButtonState buttonState;
     private void Start()
     {
-        coin = 100;
         updateCoinDisplay();
         updateSelectedItem(currentPlayerCharacter);
         items[currentPlayerCharacter].changeState(ItemState.player);
@@ -42,11 +40,11 @@ public class shop : MonoBehaviour
 
     public void updateCoinDisplay()
     {
-        coinText.SetText(coin.ToString());
+        coinText.SetText(PlayerInfo.Instance.data.balance.ToString());
     }
     public void onClickExitShop()
     {//나가기 버튼 클릭
-             shopPanel.SetActive(false);
+        shopPanel.SetActive(false);
     }
     public void onClickBuyingButton()
     {
@@ -54,6 +52,7 @@ public class shop : MonoBehaviour
         switch (item.state)
         {
             case ItemState.none:
+                int coin = PlayerInfo.Instance.data.balance;
                 if (item.price <= coin)//구매
                 {
                     coin -= item.price;

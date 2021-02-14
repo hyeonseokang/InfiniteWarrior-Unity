@@ -13,4 +13,16 @@ public abstract class Monster : MonoBehaviour, IMonster
     {
 
     }
+
+    public static IMonster CheckMonster(GameObject checkObject)
+    {
+        IMonster monster = checkObject.GetComponent<Monster>();
+
+        if (monster == null)
+        {
+            return new EmptyMonster();
+        }
+
+        return monster;
+    }
 }
