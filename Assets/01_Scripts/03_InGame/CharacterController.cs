@@ -9,6 +9,11 @@ public class CharacterController : MonoBehaviour
     public void PlayJump()
     {
         characterAnimator.SetTrigger("Jump");
-        character.AddForce(Vector2.up * 200.0f);
+        character.AddForce(Vector2.up * 220.0f);
+    }
+
+    public void PlayIdle()
+    {
+        characterAnimator.SetTrigger("Idle");
     }
 }

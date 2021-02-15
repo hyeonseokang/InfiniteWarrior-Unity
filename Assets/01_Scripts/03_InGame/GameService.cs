@@ -8,17 +8,27 @@ public class GameService : MonoBehaviour
     public MapController mapController;
     public CharacterController characterController;
     public HpController hpController;
+    public ResultController resultController;
+
     public Button moveButton;
     private bool isMoveButton = true;
 
     private void Start()
     {
-        AddClickEventMoveButton();
+        Invoke("AddClickEventMoveButton", 1.0f);
 
 
         InGameEventService.Instance.hitCharacterEvent += hpController.DecreaseHP;
         int hp = characterController.character.GetComponent<Character>().GetHP();
         hpController.SetHP(hp);
+
+        InGameEventService.Instance.enterGroundEvent += SetEnableButtonTrue;
+        InGameEventService.Instance.enterGroundEvent += characterController.PlayIdle;
+
+        InGameEventService.Instance.dieCharacterEvent += () =>
+        {
+            resultController.ShowResultPopup(100, 200);
+        };
     }
 
     public void AddClickEventMoveButton()
@@ -35,8 +45,6 @@ public class GameService : MonoBehaviour
             mapController.MoveMap();
 
             characterController.PlayJump();
-
-            Invoke("SetEnableButtonTrue", 0.6f);
         });
     }
 

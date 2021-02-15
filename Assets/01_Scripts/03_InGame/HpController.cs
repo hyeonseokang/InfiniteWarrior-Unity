@@ -25,5 +25,10 @@ public class HpController : MonoBehaviour
     {
         hpImages[hpValue].sprite = emptyHpSprite;
         hpValue -= 1;
+
+        if (hpValue == 0)
+        {
+            InGameEventService.Instance.dieCharacterEvent();
+        }
     }
 }
