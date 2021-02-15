@@ -5,7 +5,6 @@ using TMPro;
 
 public class shop : MonoBehaviour
 {
-    public int coin = 100;
     public int currentPlayerCharacter;//현재 
     public int currentSelectedCharacter;//선택된 캐릭터
 
@@ -17,12 +16,11 @@ public class shop : MonoBehaviour
     public GameObject lockBlockPrefab;
 
     public TextMeshProUGUI buyButtonText;//구매버튼 text
-    public TextMeshProUGUI coinText;//현재 코인 text
+    public TextMeshProUGUI balanceText;//현재 코인 text
     ButtonState buttonState;
     private void Start()
     {
-        coin = 100;
-        updateCoinDisplay();
+        updateBalanceDisplay();
         updateSelectedItem(currentPlayerCharacter);
         items[currentPlayerCharacter].changeState(ItemState.player);
         //setLockBlocks();        
@@ -40,9 +38,9 @@ public class shop : MonoBehaviour
         currentSelectedCharacter = n;
     }
 
-    public void updateCoinDisplay()
+    public void updateBalanceDisplay()
     {
-        coinText.SetText(coin.ToString());
+        balanceText.SetText(PlayerInfo.Instance.balance.ToString());
     }
     public void onClickExitShop()
     {//나가기 버튼 클릭
@@ -54,16 +52,16 @@ public class shop : MonoBehaviour
         switch (item.state)
         {
             case ItemState.none:
-                if (item.price <= coin)//구매
+                if (item.price <= PlayerInfo.Instance.balance)//구매
                 {
-                    coin -= item.price;
+                    PlayerInfo.Instance.balance -= item.price;
 
                     item.state = ItemState.player;
                     items[currentPlayerCharacter].state = ItemState.purchased;
                     currentPlayerCharacter = item.id;
 
                     changeBuyingButton(ButtonState.selected);
-                    updateCoinDisplay();
+                    updateBalanceDisplay();
                 }
                 else
                 {
