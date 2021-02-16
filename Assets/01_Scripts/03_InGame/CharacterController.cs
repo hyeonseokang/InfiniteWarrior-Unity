@@ -16,4 +16,9 @@ public class CharacterController : MonoBehaviour
     {
         characterAnimator.SetTrigger("Idle");
     }
+
+    public void PlayAttack()
+    {
+        characterAnimator.SetTrigger("Attack");
+    }
 }

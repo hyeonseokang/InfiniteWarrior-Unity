@@ -5193,6 +5193,7 @@ MonoBehaviour:
   hpController: {fileID: 1972087318}
   resultController: {fileID: 1972087319}
   moveButton: {fileID: 1874288836}
+  attackButton: {fileID: 574473088}
 --- !u!114 &1972087316
 MonoBehaviour:
   m_ObjectHideFlags: 0

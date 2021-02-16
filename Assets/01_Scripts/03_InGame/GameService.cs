@@ -11,6 +11,7 @@ public class GameService : MonoBehaviour
     public ResultController resultController;
 
     public Button moveButton;
+    public Button attackButton;
     private bool isMoveButton = true;
 
     private void Start()
@@ -35,7 +36,6 @@ public class GameService : MonoBehaviour
     {
         moveButton.onClick.AddListener(() =>
         {
-            Debug.Log("시작");
             if (isMoveButton == false)
                 return;
 
@@ -45,6 +45,11 @@ public class GameService : MonoBehaviour
             mapController.MoveMap();
 
             characterController.PlayJump();
+        });
+
+        attackButton.onClick.AddListener(() =>
+        {
+            characterController.PlayAttack();
         });
     }
 
