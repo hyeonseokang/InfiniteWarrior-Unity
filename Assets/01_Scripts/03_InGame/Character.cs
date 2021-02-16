@@ -46,5 +46,9 @@ public class Character : MonoBehaviour
             hp -= 1;
             InGameEventService.Instance.hitCharacterEvent();
         }
+        else if(collision.CompareTag("dieObstacle"))
+        {
+            InGameEventService.Instance.dieCharacterEvent();
+        }
     }
 }

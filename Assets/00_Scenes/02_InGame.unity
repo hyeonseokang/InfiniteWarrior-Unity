@@ -1022,9 +1022,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 247612217}
+  - component: {fileID: 247612218}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: dieObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1049,6 +1050,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &247612218
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247612216}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.580646, y: -2.8843}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.161292, y: 0.8728137}
+  m_EdgeRadius: 0
 --- !u!1 &343901467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1349,7 @@ GameObject:
   - component: {fileID: 436180112}
   m_Layer: 0
   m_Name: Character1
-  m_TagString: Untagged
+  m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5194,6 +5221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 247612217}
   obstacle1: {fileID: 9032945026211991858, guid: a4c251a0d664a1840b7286776c8be424,
+    type: 3}
+  breakBlock: {fileID: 1882118050539486658, guid: 7e541dc9a54aafd46a2a5360c3c0d968,
     type: 3}
 --- !u!114 &1972087318
 MonoBehaviour:

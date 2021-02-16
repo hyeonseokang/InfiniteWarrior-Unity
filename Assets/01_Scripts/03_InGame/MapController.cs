@@ -24,7 +24,7 @@ public class MapController : MonoBehaviour
         GameObject createObject = null;
         if(randomValue >= 80)
         {
-            createObject = obstacleFactory.CreateMonster(ObstacleType.Obstacle1);
+            createObject = CreateRandomObstacle();
         }
         else
         {
@@ -39,6 +39,23 @@ public class MapController : MonoBehaviour
         createObject.transform.position = createPosition;
 
         mapObjects.Add(createObject);
+    }
+
+    public GameObject CreateRandomObstacle()
+    {
+        GameObject obstacle = null;
+
+        int value = Random.Range(0, 100);
+        if(value >= 60)
+        {
+            obstacle = obstacleFactory.CreateMonster(ObstacleType.BreakBlock);
+        }
+        else
+        {
+            obstacle = obstacleFactory.CreateMonster(ObstacleType.Obstacle1);
+        }
+
+        return obstacle;
     }
 
     public void RemoveObject(GameObject removeObject)
@@ -58,7 +75,7 @@ public class MapController : MonoBehaviour
         }
     }
 
-    IEnumerator MoveAnimation(GameObject moveObject)
+    private IEnumerator MoveAnimation(GameObject moveObject)
     {
         Vector3 firstPosition = moveObject.transform.position;
         Vector3 targetPosition = moveObject.transform.position;
