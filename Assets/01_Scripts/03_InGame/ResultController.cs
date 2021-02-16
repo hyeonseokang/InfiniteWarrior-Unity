@@ -34,6 +34,7 @@ public class ResultController : MonoBehaviour
 
     private void Init(int bestScore, int currentScore)
     {
+        // 요 부분 수정 하면됨
         bestScoreText.SetText(bestScore.ToString());
         currentScoreText.SetText(currentScore.ToString());
     }
