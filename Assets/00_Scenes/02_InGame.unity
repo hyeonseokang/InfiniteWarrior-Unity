@@ -3976,6 +3976,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497351648}
   m_CullTransparentMesh: 0
+--- !u!1 &1526354572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1526354574}
+  - component: {fileID: 1526354573}
+  m_Layer: 0
+  m_Name: Monster
+  m_TagString: dieObstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1526354573
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526354572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.580646, y: -2.8843}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.161292, y: 0.8728137}
+  m_EdgeRadius: 0
+--- !u!4 &1526354574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526354572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.79, y: -1.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538981113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5128,7 +5185,6 @@ GameObject:
   - component: {fileID: 1972087313}
   - component: {fileID: 1972087315}
   - component: {fileID: 1972087316}
-  - component: {fileID: 1972087317}
   - component: {fileID: 1972087318}
   - component: {fileID: 1972087319}
   m_Layer: 0
@@ -5150,7 +5206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0be3d606deb4b64db1a08d1f418ddcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleFactory: {fileID: 1972087317}
+  obstacleFactory: {fileID: 2057240579}
+  monsterFactory: {fileID: 2057240580}
   mapObjects:
   - {fileID: 747565508}
   - {fileID: 490002302}
@@ -5158,6 +5215,7 @@ MonoBehaviour:
   - {fileID: 87254029}
   - {fileID: 550466892}
   - {fileID: 685328516}
+  monsterObjects: []
   deltaMoveX: 1.314
   parent: {fileID: 247612217}
   blockObject: {fileID: 3724285920464958062, guid: f57c40aeb3b089f46ab76ee981e86c00,
@@ -5174,7 +5232,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1972087315
 MonoBehaviour:
@@ -5208,23 +5266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterAnimator: {fileID: 436180111}
   character: {fileID: 436180110}
---- !u!114 &1972087317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972087312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed1d52dd9f79fe4e81eed1abc3140bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 247612217}
-  obstacle1: {fileID: 9032945026211991858, guid: a4c251a0d664a1840b7286776c8be424,
-    type: 3}
-  breakBlock: {fileID: 1882118050539486658, guid: 7e541dc9a54aafd46a2a5360c3c0d968,
-    type: 3}
 --- !u!114 &1972087318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5513,6 +5554,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022524059}
   m_CullTransparentMesh: 0
+--- !u!1 &2057240578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057240581}
+  - component: {fileID: 2057240580}
+  - component: {fileID: 2057240579}
+  m_Layer: 0
+  m_Name: FactoryService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2057240579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057240578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed1d52dd9f79fe4e81eed1abc3140bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 247612217}
+  obstacle1: {fileID: 9032945026211991858, guid: a4c251a0d664a1840b7286776c8be424,
+    type: 3}
+  breakBlock: {fileID: 1882118050539486658, guid: 7e541dc9a54aafd46a2a5360c3c0d968,
+    type: 3}
+--- !u!114 &2057240580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057240578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdaadb48dd23274eb75155aeadd1356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  monster1: {fileID: 4549721702954779070, guid: 6927be5e31d10504f9dcc6cc0d668614,
+    type: 3}
+--- !u!4 &2057240581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057240578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.34660032, y: -0.4231286, z: -0.10306749}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064167428
 GameObject:
   m_ObjectHideFlags: 0

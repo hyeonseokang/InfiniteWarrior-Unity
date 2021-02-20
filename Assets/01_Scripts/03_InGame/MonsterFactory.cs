@@ -5,7 +5,6 @@ using UnityEngine;
 public enum MonsterType
 {
     Monster1,
-    Monster2,
 }
 public class MonsterFactory : FactoryMethod
 {

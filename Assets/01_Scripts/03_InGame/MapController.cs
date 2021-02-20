@@ -5,7 +5,10 @@ using UnityEngine;
 public class MapController : MonoBehaviour
 {
     public ObstacleFactory obstacleFactory;
+    public MonsterFactory monsterFactory;
     public List<GameObject> mapObjects;
+    public List<GameObject> monsterObjects;
+
     public float deltaMoveX;
 
     public Transform parent;
@@ -16,10 +19,19 @@ public class MapController : MonoBehaviour
         {
             StartCoroutine(MoveAnimation(mapObjects[i]));
         }
+
+        for (int i = 0; i < monsterObjects.Count; i++)
+        {
+            StartCoroutine(MoveAnimation(monsterObjects[i]));
+        }
     }
 
     public void CreateRandomMap()
     {
+        int lastIndex = mapObjects.Count - 1;
+        Vector3 createPosition = mapObjects[lastIndex].transform.position;
+        createPosition.x += deltaMoveX;
+
         int randomValue = Random.Range(0, 100);
         GameObject createObject = null;
         if(randomValue >= 80)
@@ -29,15 +41,17 @@ public class MapController : MonoBehaviour
         else
         {
             createObject = Instantiate(blockObject, parent);
+            GameObject monster = CreateRandomMonster();
+            
+            Vector3 monsterPosition = monster.transform.position;
+            monsterPosition.x = createPosition.x;
+            monsterPosition.z = createPosition.z;
+
+            monster.transform.position = monsterPosition;
+            monsterObjects.Add(monster);
         }
-
         
-        int lastIndex = mapObjects.Count - 1;
-        Vector3 createPosition = mapObjects[lastIndex].transform.position;
-        createPosition.x += deltaMoveX;
-
         createObject.transform.position = createPosition;
-
         mapObjects.Add(createObject);
     }
 
@@ -64,15 +78,20 @@ public class MapController : MonoBehaviour
         Destroy(removeObject);
     }
 
-    private void Update()
+    private GameObject CreateRandomMonster()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        int value = Random.Range(0, 100);
+        GameObject monster = null;
+        if (value > 50)
         {
-            CreateRandomMap();
-            RemoveObject(mapObjects[0]);
-            Debug.Log("시작");
-            MoveMap();
+            monster = monsterFactory.CreateMonster(MonsterType.Monster1);
         }
+        else
+        {
+            monster = new GameObject("nullObject");
+        }
+
+        return monster;
     }
 
     private IEnumerator MoveAnimation(GameObject moveObject)

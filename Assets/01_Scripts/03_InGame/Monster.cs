@@ -7,11 +7,21 @@ public interface IMonster
     void Hit();
 }
 
-public abstract class Monster : MonoBehaviour, IMonster
+public class Monster : MonoBehaviour, IMonster
 {
+    public float attackTime = 3.0f;
     public float attackDistance = 5.0f;
+
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        Invoke("Attack", attackTime);
+    }
     public void Attack()
     {
+        animator.SetTrigger("Attack");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, attackDistance);
         
         if (hit)
@@ -21,6 +31,8 @@ public abstract class Monster : MonoBehaviour, IMonster
                 InGameEventService.Instance.hitCharacterEvent();
             }
         }
+
+        Invoke("Attack", attackTime);
     }
     public void Hit()
     {
