@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTime: 3
-  attackDistance: 5
+  attackDistance: 1
 --- !u!95 &3321960368749188622
 Animator:
   serializedVersion: 3

@@ -4027,7 +4027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526354572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.79, y: -1.67, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5264,8 +5264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11e5f263f3320a4fb2c3fa614fcd969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterAnimator: {fileID: 436180111}
-  character: {fileID: 436180110}
+  character: {fileID: 436180112}
 --- !u!114 &1972087318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5601,8 +5600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdaadb48dd23274eb75155aeadd1356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  monster1: {fileID: 4549721702954779070, guid: 6927be5e31d10504f9dcc6cc0d668614,
+  parent: {fileID: 1526354574}
+  monster1: {fileID: 1183564207653431294, guid: 6927be5e31d10504f9dcc6cc0d668614,
     type: 3}
 --- !u!4 &2057240581
 Transform:

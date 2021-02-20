@@ -22,21 +22,30 @@ public class Monster : MonoBehaviour, IMonster
     public void Attack()
     {
         animator.SetTrigger("Attack");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, attackDistance);
-        
+        Invoke("AttackRayCast", 1.0f);
+    }
+    public void Hit()
+    {
+        Destroy(gameObject);
+    }
+
+    private void AttackRayCast()
+    {
+        Vector3 rayPosition = transform.position;
+        rayPosition.x -= 1.0f;
+        RaycastHit2D hit = Physics2D.Raycast(rayPosition, -transform.right, attackDistance*1000);
+        Debug.DrawRay(rayPosition, -transform.right * attackDistance, Color.red, 0.3f);
         if (hit)
         {
+            Debug.Log(hit.collider.tag);
             if (hit.collider.CompareTag("character"))
             {
+                Debug.Log("character 맞음");
                 InGameEventService.Instance.hitCharacterEvent();
             }
         }
 
         Invoke("Attack", attackTime);
-    }
-    public void Hit()
-    {
-        Destroy(gameObject);
     }
 
     public static IMonster CheckMonster(GameObject checkObject)
