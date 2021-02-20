@@ -40,7 +40,7 @@ public class shop : MonoBehaviour
 
     public void updateBalanceDisplay()
     {
-        balanceText.SetText(PlayerInfo.Instance.data.balance.ToString());
+        balanceText.SetText(PlayerInfo.Instance.GetBalance().ToString());
     }
     public void onClickExitShop()
     {//나가기 버튼 클릭
@@ -52,9 +52,10 @@ public class shop : MonoBehaviour
         switch (item.state)
         {
             case ItemState.none:
-                if (item.price <= PlayerInfo.Instance.data.balance)//구매
+                int balance = PlayerInfo.Instance.GetBalance();
+                if (item.price <= balance)//구매
                 {
-                    PlayerInfo.Instance.data.balance -= item.price;
+                    PlayerInfo.Instance.SetBalance(balance - item.price);
 
                     item.state = ItemState.player;
                     items[currentPlayerCharacter].state = ItemState.purchased;

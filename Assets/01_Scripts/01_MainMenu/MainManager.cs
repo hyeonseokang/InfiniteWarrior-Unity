@@ -20,9 +20,9 @@ public class MainManager : MonoBehaviour
     void Start()
     {
        // characterImage.sprite=
-        coinText.SetText(PlayerInfo.Instance.data.balance.ToString());
-        bestscoreText.SetText("BEST :" + PlayerInfo.Instance.data.bestScore);
-        playcountText.SetText("PLAY :" + PlayerInfo.Instance.data.playCount);
+        coinText.SetText(PlayerInfo.Instance.GetBalance().ToString());
+        bestscoreText.SetText("BEST :" + PlayerInfo.Instance.GetBestScore().ToString());
+        playcountText.SetText("PLAY :" + PlayerInfo.Instance.GetPlayCount().ToString());
         
     }
 

@@ -27,7 +27,7 @@ public class Pause : MonoBehaviour
     {
         ingame.SetPause();
         pausePanel.SetActive(true);
-        bestScoreText.SetText(PlayerInfo.Instance.data.bestScore.ToString());
+        bestScoreText.SetText(PlayerInfo.Instance.GetBestScore().ToString());
         currentScoreText.SetText("2000");
     }
     

@@ -29,7 +29,9 @@ public class GameService : MonoBehaviour
 
         InGameEventService.Instance.dieCharacterEvent += () =>
         {
-            resultController.ShowResultPopup(100, 200);
+            int bestScore = PlayerInfo.Instance.GetBestScore();
+            int score = scoreController.getScoreValue();
+            resultController.ShowResultPopup(bestScore, score);
         };
     }
 

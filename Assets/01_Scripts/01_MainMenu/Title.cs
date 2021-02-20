@@ -13,8 +13,8 @@ public class Title : MonoBehaviour
     void Start()
     {
         SoundManager.Instance.PlayBGM();
-        bestscoreText.SetText("BEST :" + PlayerInfo.Instance.data.bestScore);
-        playcountText.SetText("PLAY :" + PlayerInfo.Instance.data.playCount);
+        bestscoreText.SetText("BEST :" + PlayerInfo.Instance.GetBestScore().ToString());
+        playcountText.SetText("PLAY :" + PlayerInfo.Instance.GetPlayCount().ToString());
     }
     private void Update()
     {
