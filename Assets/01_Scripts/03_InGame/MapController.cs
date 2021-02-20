@@ -34,6 +34,7 @@ public class MapController : MonoBehaviour
 
         int randomValue = Random.Range(0, 100);
         GameObject createObject = null;
+        GameObject monster = new GameObject("nullObject");
         if(randomValue >= 80)
         {
             createObject = CreateRandomObstacle();
@@ -41,18 +42,20 @@ public class MapController : MonoBehaviour
         else
         {
             createObject = Instantiate(blockObject, parent);
-            GameObject monster = CreateRandomMonster();
-            
+            monster = CreateRandomMonster(monster);
             Vector3 monsterPosition = monster.transform.position;
             monsterPosition.x = createPosition.x;
             monsterPosition.z = createPosition.z;
 
             monster.transform.position = monsterPosition;
-            monsterObjects.Add(monster);
         }
         
         createObject.transform.position = createPosition;
         mapObjects.Add(createObject);
+        monsterObjects.Add(monster);
+
+        RemoveObject(mapObjects[0], mapObjects);
+        RemoveObject(monsterObjects[0], monsterObjects);
     }
 
     public GameObject CreateRandomObstacle()
@@ -72,23 +75,19 @@ public class MapController : MonoBehaviour
         return obstacle;
     }
 
-    public void RemoveObject(GameObject removeObject)
+    public void RemoveObject(GameObject removeObject, List<GameObject> list)
     {
-        mapObjects.Remove(removeObject);
+        list.Remove(removeObject);
         Destroy(removeObject);
     }
 
-    private GameObject CreateRandomMonster()
+    private GameObject CreateRandomMonster(GameObject nullObject)
     {
         int value = Random.Range(0, 100);
-        GameObject monster = null;
+        GameObject monster = nullObject;
         if (value > 50)
         {
             monster = monsterFactory.CreateMonster(MonsterType.Monster1);
-        }
-        else
-        {
-            monster = new GameObject("nullObject");
         }
 
         return monster;

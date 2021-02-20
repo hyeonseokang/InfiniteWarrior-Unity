@@ -9,6 +9,7 @@ public class GameService : MonoBehaviour
     public CharacterController characterController;
     public HpController hpController;
     public ResultController resultController;
+    public Score scoreController;
 
     public Button moveButton;
     public Button attackButton;
@@ -41,10 +42,10 @@ public class GameService : MonoBehaviour
 
             isMoveButton = false;
             mapController.CreateRandomMap();
-            mapController.RemoveObject(mapController.mapObjects[0]);
             mapController.MoveMap();
 
             characterController.PlayJump();
+            scoreController.addScoreValue(1);
         });
 
         attackButton.onClick.AddListener(() =>
