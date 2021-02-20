@@ -36,11 +36,30 @@ public class ResultController : MonoBehaviour
     {
         // 요 부분 수정 하면됨
         bestScoreText.SetText(bestScore.ToString());
-        currentScoreText.SetText(currentScore.ToString());
+        StartCoroutine(CountScoreAnimation(currentScore));//코루틴 시작
     }
 
     private void ShowResultPopUp()
     {
         resultPopUp.SetActive(true);
     }
+
+
+    //스코어 카운팅
+    IEnumerator CountScoreAnimation(float targetScore) {
+
+        float curScore = 0;
+        float t = 1.0f;
+        float offset = (targetScore - curScore) / t;
+        while(curScore<targetScore)
+        {
+            curScore += (offset * Time.deltaTime);
+            currentScoreText.SetText(((int)curScore).ToString());
+            yield return null;
+        }        
+        currentScoreText.SetText(targetScore.ToString());
+    }
+
 }
+
+
