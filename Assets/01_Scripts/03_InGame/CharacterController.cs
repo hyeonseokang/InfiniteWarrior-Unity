@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    public Animator characterAnimator;
-    public Rigidbody2D character;
+    public Character character;
     public void PlayJump()
     {
-        characterAnimator.SetTrigger("Jump");
-        character.AddForce(Vector2.up * 220.0f);
+        character.Jump();
     }
 
     public void PlayIdle()
     {
-        characterAnimator.SetTrigger("Idle");
+        character.Idle();
     }
 
     public void PlayAttack()
     {
-        characterAnimator.SetTrigger("Attack");
+        character.Attack();
     }
 }
