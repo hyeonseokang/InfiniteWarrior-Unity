@@ -87,6 +87,7 @@ public class MapController : MonoBehaviour
         GameObject monster = nullObject;
         if (value > 50)
         {
+            Destroy(nullObject.gameObject);
             monster = monsterFactory.CreateMonster(MonsterType.Monster1);
         }
 
