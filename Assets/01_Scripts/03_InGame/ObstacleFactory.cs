@@ -5,13 +5,15 @@ using UnityEngine;
 public enum ObstacleType
 {
     Obstacle1,
-    Obstacle2,
+    BreakBlock,
 }
 
 public class ObstacleFactory : FactoryMethod
 {
     public Transform parent;
     public GameObject obstacle1;
+    public GameObject breakBlock;
+
     public GameObject CreateMonster(ObstacleType type)
     {
         GameObject obstacle = null;
@@ -19,6 +21,9 @@ public class ObstacleFactory : FactoryMethod
         {
             case ObstacleType.Obstacle1:
                 obstacle = CreateObject(obstacle1, parent);
+                break;
+            case ObstacleType.BreakBlock:
+                obstacle = CreateObject(breakBlock, parent);
                 break;
         }
 

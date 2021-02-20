@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingame : MonoBehaviour
-
-   
 {
     public Pause pausePanel;
     private bool isPause = false;

@@ -44,7 +44,7 @@ public class shop : MonoBehaviour
     }
     public void onClickExitShop()
     {//나가기 버튼 클릭
-             shopPanel.SetActive(false);
+        shopPanel.SetActive(false);
     }
     public void onClickBuyingButton()
     {

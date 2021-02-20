@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
-
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI playcountText;
     public TextMeshProUGUI bestscoreText;
@@ -21,9 +20,9 @@ public class MainManager : MonoBehaviour
     void Start()
     {
        // characterImage.sprite=
-        coinText.SetText(GameManager.Instance.coin+" 원");
-        bestscoreText.SetText("최고점수 :" + PlayerInfo.Instance.bestScore);
-        playcountText.SetText("플레이 횟수 :" + PlayerInfo.Instance.playCount);
+        coinText.SetText(PlayerInfo.Instance.data.balance.ToString());
+        bestscoreText.SetText("BEST :" + PlayerInfo.Instance.data.bestScore);
+        playcountText.SetText("PLAY :" + PlayerInfo.Instance.data.playCount);
         
     }
 
