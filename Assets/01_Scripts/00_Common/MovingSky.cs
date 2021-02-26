@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovingSky : MonoBehaviour
 {
 
-    public float ScrollSpeed = 3f;
+    public float ScrollSpeed = 1.0f;
     float Offset;
     Renderer renderer;
      
