@@ -11,6 +11,8 @@ public class Pause : MonoBehaviour
     public GameObject pausePanel;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI currentScoreText;
+
+    public Score scoreController;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class Pause : MonoBehaviour
         ingame.SetPause();
         pausePanel.SetActive(true);
         bestScoreText.SetText(PlayerInfo.Instance.GetBestScore().ToString());
-        currentScoreText.SetText("2000");
+        currentScoreText.SetText(scoreController.getScoreValue().ToString());
     }
     
     public void onChangeSFXToggle(Toggle toggle)

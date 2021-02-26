@@ -22,11 +22,11 @@ public class Setting : MonoBehaviour
     }
     public void onChangeSFXToggle(Toggle toggle)
     {
-        SoundManager.Instance.SetMuteSFX(!toggle.isOn);
+        SoundManager.Instance.SetMuteSFX(toggle.isOn);
     }
     public void onClickBGMButton(Toggle toggle)
     {
-        SoundManager.Instance.SetMuteBGM(!toggle.isOn);
+        SoundManager.Instance.SetMuteBGM(toggle.isOn);
     }
     public void onChangeVibeToggle(Toggle toggle)
     {

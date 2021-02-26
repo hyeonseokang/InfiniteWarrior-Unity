@@ -23,6 +23,7 @@ public class Ingame : MonoBehaviour
     public void onClickPauseButton()
     {
         pausePanel.initPausePanel();
+        SetPause();
     }
 
     public void SetPause()
