@@ -5,28 +5,20 @@ using UnityEngine.UI;
 public class Setting : MonoBehaviour
 {
     public GameObject settingPanel;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Image keyChangeSelectImage;
     public void onClickADButton()
     {
 
     }
-    public void onChangeKeyTypeToggle1(Toggle toggle)
+    
+    public void onChangeKeyTypeToggle1(Button button)
     {
-
+        keyChangeSelectImage.transform.position = button.transform.position;
     }
-    public void onChangeKeyTypeToggle2(Toggle toggle)
-    {
 
+    public void onChangeKeyTypeToggle2(Button button)
+    {
+        keyChangeSelectImage.transform.position = button.transform.position;
     }
     public void onChangeSFXToggle(Toggle toggle)
     {
