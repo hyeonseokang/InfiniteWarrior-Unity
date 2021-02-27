@@ -28,6 +28,10 @@ public class ResultController : MonoBehaviour
 
     public void ShowResultPopup(int bestScore, int currentScore)
     {
+        if(currentScore > bestScore)
+        {
+            PlayerInfo.Instance.SetBestScore(currentScore);
+        }
         Init(bestScore, currentScore);
         ShowResultPopUp();
     }
@@ -49,7 +53,7 @@ public class ResultController : MonoBehaviour
     IEnumerator CountScoreAnimation(float targetScore) {
 
         float curScore = 0;
-        float t = 1.0f;
+        float t = 5.0f;
         float offset = (targetScore - curScore) / t;
         while(curScore<targetScore)
         {

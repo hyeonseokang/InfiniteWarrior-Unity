@@ -31,6 +31,7 @@ public class SaveService : Singleton<SaveService>
     private void Awake()
     {
         dataPath = Application.persistentDataPath + "/dt.iw";
+        Debug.Log(dataPath);
     }
     
     public void Save(SaveData data)
@@ -45,11 +46,8 @@ public class SaveService : Singleton<SaveService>
 
     public SaveData Load()
     {
-        Debug.Log(dataPath);
-        Debug.Log("왜???  " + File.Exists(dataPath));
         if(File.Exists(dataPath))
         {
-            Debug.Log("load 됨 " + dataPath);
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(dataPath, FileMode.Open);
             SaveData data = (SaveData)bf.Deserialize(file);
@@ -57,7 +55,7 @@ public class SaveService : Singleton<SaveService>
 
             return data;
         }
-
+        Save(SaveData.GetEmptyData());
         return SaveData.GetEmptyData();
     }
 }
