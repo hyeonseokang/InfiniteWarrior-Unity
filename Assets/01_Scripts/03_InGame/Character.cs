@@ -27,7 +27,7 @@ public class Character : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("Attack");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, attackDistance);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.up, transform.right, attackDistance);
         Debug.DrawRay(transform.position, transform.right * attackDistance, Color.red, 0.3f);
 
         if (hit)

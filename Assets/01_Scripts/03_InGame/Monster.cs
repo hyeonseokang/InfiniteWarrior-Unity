@@ -13,10 +13,12 @@ public class Monster : MonoBehaviour, IMonster
     public float attackDistance = 5.0f;
 
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         Invoke("Attack", attackTime);
     }
     public void Attack()
@@ -26,7 +28,19 @@ public class Monster : MonoBehaviour, IMonster
     }
     public void Hit()
     {
-        Destroy(gameObject);
+        StartCoroutine(StartHitAnimation());
+    }
+    public IEnumerator StartHitAnimation()
+    {
+        for (int i = 0;i < 2; i++)
+        {
+            spriteRenderer.color = new Color(1.0f, 0.4f, 0.4f);
+            yield return new WaitForSeconds(0.05f);
+            spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(0.05f);
+        }
+        
+        gameObject.SetActive(false);
     }
 
     private void AttackRayCast()
