@@ -10,6 +10,7 @@ public class GameService : MonoBehaviour
     public HpController hpController;
     public ResultController resultController;
     public Score scoreController;
+    public InGameCharacterFactory inGameCharacterFactory;
 
     public Button moveButton;
     public Button attackButton;
@@ -17,6 +18,9 @@ public class GameService : MonoBehaviour
 
     private void Start()
     {
+        Character character = inGameCharacterFactory.GetCharacter();
+        characterController.character = character;
+
         Invoke("AddClickEventMoveButton", 1.0f);
 
 

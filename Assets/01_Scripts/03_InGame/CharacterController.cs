@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     public Character character;
+    
     public void PlayJump()
     {
         character.Jump();
