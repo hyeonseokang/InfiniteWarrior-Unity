@@ -35,6 +35,7 @@ public class GameService : MonoBehaviour
 
 
         InGameEventService.Instance.hitCharacterEvent += hpController.DecreaseHP;
+        InGameEventService.Instance.hitCharacterEvent += characterController.PlayHit;
         int hp = characterController.character.GetComponent<Character>().GetHP();
         hpController.SetHP(hp);
 

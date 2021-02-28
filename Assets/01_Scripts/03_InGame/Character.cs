@@ -9,11 +9,15 @@ public class Character : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D playerRigidbody;
+    private SpriteRenderer spriteRenderer;
+    private Collider2D characterCollider;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();    
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        characterCollider = GetComponent<Collider2D>();
     }
     public int GetHP()
     {
@@ -65,6 +69,16 @@ public class Character : MonoBehaviour
         else if(collision.CompareTag("dieObstacle"))
         {
             InGameEventService.Instance.dieCharacterEvent();
+        }
+    }
+    public IEnumerator StartHitAnimation()
+    {
+        for (int i = 0;i < 5; i++)
+        {
+            spriteRenderer.color = new Color(1.0f, 0.4f, 0.4f);
+            yield return new WaitForSeconds(0.05f);
+            spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }

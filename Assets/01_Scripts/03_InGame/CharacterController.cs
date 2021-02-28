@@ -20,4 +20,9 @@ public class CharacterController : MonoBehaviour
     {
         character.Attack();
     }
+
+    public void PlayHit()
+    {
+        StartCoroutine(character.StartHitAnimation());
+    }
 }
