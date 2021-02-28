@@ -7,6 +7,11 @@ public class MenuCharacter : MonoBehaviour
     public List<SpriteRenderer> characters;
     public SpriteRenderer character;
 
+    private void Start()
+    {
+        ChangeCharacterImage();
+    }
+
     public void ChangeCharacterImage()
     {
         string name = PlayerInfo.Instance.GetCharacter();

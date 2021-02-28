@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +34,6 @@ public class item : MonoBehaviour
     public void OnClickItem()
     {
         shoppingManager.updateSelectedItem(id);
-
     }
 
     

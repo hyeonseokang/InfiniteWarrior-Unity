@@ -25,6 +25,16 @@ public class shop : MonoBehaviour
         updateBalanceDisplay();
         updateSelectedItem(currentPlayerCharacter);
         items[currentPlayerCharacter].changeState(ItemState.player);
+
+        bool[] purchasedItem = PlayerInfo.Instance.GetPurchasedCharacters();
+        for (int i = 0; i < items.Length; i++)
+        {
+            Debug.LogWarning(purchasedItem[i]);
+            if (purchasedItem[i] == true)
+            {
+                items[i].changeState(ItemState.purchased);
+            }
+        }
         //setLockBlocks();        
     }
     public void changeCurrentCharacter(int n)
@@ -62,7 +72,7 @@ public class shop : MonoBehaviour
                     item.state = ItemState.player;
                     items[currentPlayerCharacter].state = ItemState.purchased;
                     currentPlayerCharacter = item.id;
-
+                    PlayerInfo.Instance.SetPurchasedCharacter(item.id);
                     changeBuyingButton(ButtonState.selected);
                     updateBalanceDisplay();
                 }

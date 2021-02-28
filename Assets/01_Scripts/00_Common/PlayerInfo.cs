@@ -46,7 +46,18 @@ public class PlayerInfo : Singleton<PlayerInfo>
         return data.character;
     }
 
-    private void Start()
+    public void SetPurchasedCharacter(int index)
+    {
+        data.purchasedCharacters[index] = true;
+        SaveService.Instance.Save(data);
+    }
+
+    public bool[] GetPurchasedCharacters()
+    {
+        return data.purchasedCharacters;
+    }
+
+    private void Awake()
     {
         data = SaveService.Instance.Load();
     }

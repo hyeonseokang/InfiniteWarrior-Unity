@@ -11,6 +11,7 @@ public class SaveData
     public int bestScore;
     public int playCount;
     public string character;
+    public bool[] purchasedCharacters;
 
     public static SaveData GetEmptyData()
     {
@@ -18,8 +19,11 @@ public class SaveData
         data.balance = 1000;
         data.bestScore = 0;
         data.playCount = 0;
-        data.character = "test1";
-
+        data.character = "character1";
+        data.purchasedCharacters = new bool[3];
+        data.purchasedCharacters[0] = true;
+        data.purchasedCharacters[1] = false;
+        data.purchasedCharacters[2] = false;
         return data;
     }
 }
@@ -62,6 +66,7 @@ public class SaveService : Singleton<SaveService>
 
             return data;
         }
+
         Save(SaveData.GetEmptyData());
         return SaveData.GetEmptyData();
     }
