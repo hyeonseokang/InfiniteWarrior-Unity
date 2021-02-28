@@ -44,6 +44,7 @@ public class GameService : MonoBehaviour
         InGameEventService.Instance.dieCharacterEvent += () =>
         {
             grave.StartActive();
+            characterController.character.gameObject.SetActive(false);
             int bestScore = PlayerInfo.Instance.GetBestScore();
             int score = scoreController.getScoreValue();
             resultController.ShowResultPopup(bestScore, score);

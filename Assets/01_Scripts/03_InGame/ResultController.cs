@@ -33,7 +33,7 @@ public class ResultController : MonoBehaviour
 
     IEnumerator DelayShowResultPopup(int bestScore, int currentScore)
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1.1f);
         if(currentScore > bestScore)
         {
             PlayerInfo.Instance.SetBestScore(currentScore);
@@ -59,7 +59,7 @@ public class ResultController : MonoBehaviour
     IEnumerator CountScoreAnimation(float targetScore) {
 
         float curScore = 0;
-        float t = 5.0f;
+        float t = 1.0f;
         float offset = (targetScore - curScore) / t;
         while(curScore<targetScore)
         {
