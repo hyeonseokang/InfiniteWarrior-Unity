@@ -11,6 +11,7 @@ public class GameService : MonoBehaviour
     public ResultController resultController;
     public Score scoreController;
     public InGameCharacterFactory inGameCharacterFactory;
+    public ButtonController buttonController;
 
     public Button moveButton;
     public Button attackButton;
@@ -18,11 +19,14 @@ public class GameService : MonoBehaviour
 
     private void Awake()
     {
-        InGameEventService.Instance.Clear();    
+        InGameEventService.Instance.Clear();
     }
 
     private void Start()
     {
+        bool isReverse = PlayerInfo.Instance.GetIsReverse();
+        buttonController.ChangeButtonPosition(isReverse);
+        
         Character character = inGameCharacterFactory.GetCharacter();
         characterController.character = character;
 

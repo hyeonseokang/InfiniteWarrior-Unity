@@ -6087,6 +6087,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingPanel: {fileID: 1182878699}
   keyChangeSelectImage: {fileID: 1740698531}
+  buttonTransform1: {fileID: 609296525}
+  buttonTransform2: {fileID: 852012073}
 --- !u!4 &1490244011
 Transform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class SaveData
     public int playCount;
     public string character;
     public bool[] purchasedCharacters;
+    public bool isButtonReverse;
 
     public static SaveData GetEmptyData()
     {
@@ -24,6 +25,7 @@ public class SaveData
         data.purchasedCharacters[0] = true;
         data.purchasedCharacters[1] = false;
         data.purchasedCharacters[2] = false;
+        data.isButtonReverse = false;
         return data;
     }
 }

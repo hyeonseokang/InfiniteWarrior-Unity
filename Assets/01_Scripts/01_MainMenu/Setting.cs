@@ -6,6 +6,17 @@ public class Setting : MonoBehaviour
 {
     public GameObject settingPanel;
     public Image keyChangeSelectImage;
+    public Transform buttonTransform1;
+    public Transform buttonTransform2;
+
+    private void Start()
+    {
+        bool isReverse = PlayerInfo.Instance.GetIsReverse();
+        if (isReverse == true)
+        {
+            keyChangeSelectImage.transform.position = buttonTransform2.position;
+        }   
+    }
     public void onClickADButton()
     {
 
@@ -13,12 +24,14 @@ public class Setting : MonoBehaviour
     
     public void onChangeKeyTypeToggle1(Button button)
     {
-        keyChangeSelectImage.transform.position = button.transform.position;
+        keyChangeSelectImage.transform.position = buttonTransform1.position;
+        PlayerInfo.Instance.SetIsButtonReverse(false);
     }
 
     public void onChangeKeyTypeToggle2(Button button)
     {
-        keyChangeSelectImage.transform.position = button.transform.position;
+        keyChangeSelectImage.transform.position = buttonTransform2.position;
+        PlayerInfo.Instance.SetIsButtonReverse(true);
     }
     public void onChangeSFXToggle(Toggle toggle)
     {

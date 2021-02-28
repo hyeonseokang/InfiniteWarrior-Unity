@@ -57,6 +57,17 @@ public class PlayerInfo : Singleton<PlayerInfo>
         return data.purchasedCharacters;
     }
 
+    public void SetIsButtonReverse(bool isReverse)
+    {
+        data.isButtonReverse = isReverse;
+        SaveService.Instance.Save(data);
+    }
+
+    public bool GetIsReverse()
+    {
+        return data.isButtonReverse;
+    }
+
     private void Awake()
     {
         data = SaveService.Instance.Load();
