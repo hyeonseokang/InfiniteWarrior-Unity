@@ -33,6 +33,13 @@ public class SaveService : Singleton<SaveService>
         dataPath = Application.persistentDataPath + "/dt.iw";
         Debug.Log(dataPath);
     }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            PlayerInfo.Instance.SetBalance(5000);
+        }
+    }
     
     public void Save(SaveData data)
     {

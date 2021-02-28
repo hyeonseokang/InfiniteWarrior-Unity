@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -7,6 +7,8 @@ public class shop : MonoBehaviour
 {
     public int currentPlayerCharacter;//현재 
     public int currentSelectedCharacter;//선택된 캐릭터
+
+    public MenuCharacter menuCharacter;
 
     public item[] items;
     private GameObject[] lockBlocks;
@@ -74,11 +76,17 @@ public class shop : MonoBehaviour
                 item.state = ItemState.player;
                 items[currentPlayerCharacter].state = ItemState.purchased;
                 currentPlayerCharacter = item.id;
-
+                ChangeCharacter(items[item.id].itemname);
                 changeBuyingButton(ButtonState.selected);
                 break;
         }
 
+    }
+
+    private void ChangeCharacter(string characterName)
+    {
+        PlayerInfo.Instance.SetCharacter(characterName);
+        menuCharacter.ChangeCharacterImage();
     }
 
     public void updateSelectedItem(int id)
