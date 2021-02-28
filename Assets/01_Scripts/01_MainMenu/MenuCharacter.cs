@@ -11,25 +11,31 @@ public class MenuCharacter : MonoBehaviour
     {
         ChangeCharacterImage();
     }
-
-    public void ChangeCharacterImage()
+    
+    public static int GetCharacterIndex()
     {
         string name = PlayerInfo.Instance.GetCharacter();
 
         if (name == "character1")
         {
-            Debug.Log("hi");
-            character.sprite = characters[0].sprite;
+            return 0;
         }
         else if(name == "character2")
         {
-            Debug.Log("hi2");
-            character.sprite = characters[1].sprite;
+            return 1;
         }
         else if(name == "character3")
         {
-            Debug.Log("hi3");
-            character.sprite = characters[2].sprite;
+            return 2;
         }
+
+        return -1;
+    }
+    public void ChangeCharacterImage()
+    {
+        string name = PlayerInfo.Instance.GetCharacter();
+        int index = GetCharacterIndex();
+
+        character.sprite = characters[index].sprite;
     }
 }

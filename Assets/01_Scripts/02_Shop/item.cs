@@ -15,13 +15,8 @@ public class item : MonoBehaviour
     public int speed;
     public ItemState state = ItemState.none;
 
-    private Outline outline;
+    public Outline outline;
 
-    public void Awake()
-    {
-        outline = GetComponent<Outline>();
-        outline.enabled = false;
-    }
     public void setOutLine(bool value)
     {
         outline.enabled = value;

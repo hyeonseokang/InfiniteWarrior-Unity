@@ -3142,6 +3142,7 @@ MonoBehaviour:
   price: 100
   speed: 0
   state: 0
+  outline: {fileID: 725340177}
 --- !u!114 &725340177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,6 +5109,7 @@ MonoBehaviour:
   price: 200
   speed: 0
   state: 0
+  outline: {fileID: 1225316993}
 --- !u!114 &1225316993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6933,6 +6935,7 @@ MonoBehaviour:
   price: 300
   speed: 0
   state: 0
+  outline: {fileID: 1716133214}
 --- !u!114 &1716133214
 MonoBehaviour:
   m_ObjectHideFlags: 0
