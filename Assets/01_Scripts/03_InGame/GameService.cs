@@ -16,6 +16,11 @@ public class GameService : MonoBehaviour
     public Button attackButton;
     private bool isMoveButton = true;
 
+    private void Awake()
+    {
+        InGameEventService.Instance.Clear();    
+    }
+
     private void Start()
     {
         Character character = inGameCharacterFactory.GetCharacter();

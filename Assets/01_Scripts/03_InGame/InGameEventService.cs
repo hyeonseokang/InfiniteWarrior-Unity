@@ -1,4 +1,4 @@
-﻿using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,4 +12,11 @@ public class InGameEventService : Singleton<InGameEventService>
 
     public delegate void DieCharacter();
     public DieCharacter dieCharacterEvent;
+
+    public void Clear()
+    {
+        hitCharacterEvent = null;
+        enterGroundEvent = null;
+        dieCharacterEvent = null;
+    }
 }

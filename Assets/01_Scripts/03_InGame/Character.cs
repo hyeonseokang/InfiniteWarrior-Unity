@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     private Animator animator;
     private Rigidbody2D playerRigidbody;
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();    
