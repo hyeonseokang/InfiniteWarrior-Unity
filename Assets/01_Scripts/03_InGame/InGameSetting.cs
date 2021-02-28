@@ -28,12 +28,12 @@ public class InGameSetting : MonoBehaviour
 
     public void OnClickBGMToggle(bool isOn)
     {
-        SoundManager.Instance.SetMuteBGM(isOn);
+        SoundManager.Instance.SetMuteBGM(!isOn);
     }
 
     public void OnClickSFXToggle(bool isOn)
     {
-        SoundManager.Instance.SetMuteSFX(isOn);
+        SoundManager.Instance.SetMuteSFX(!isOn);
     }
 
     public void OnClickVibeToggle(bool isOn)
