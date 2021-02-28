@@ -12,6 +12,7 @@ public class GameService : MonoBehaviour
     public Score scoreController;
     public InGameCharacterFactory inGameCharacterFactory;
     public ButtonController buttonController;
+    public Grave grave;
 
     public Button moveButton;
     public Button attackButton;
@@ -26,7 +27,7 @@ public class GameService : MonoBehaviour
     {
         bool isReverse = PlayerInfo.Instance.GetIsReverse();
         buttonController.ChangeButtonPosition(isReverse);
-        
+
         Character character = inGameCharacterFactory.GetCharacter();
         characterController.character = character;
 
@@ -42,6 +43,7 @@ public class GameService : MonoBehaviour
 
         InGameEventService.Instance.dieCharacterEvent += () =>
         {
+            grave.StartActive();
             int bestScore = PlayerInfo.Instance.GetBestScore();
             int score = scoreController.getScoreValue();
             resultController.ShowResultPopup(bestScore, score);

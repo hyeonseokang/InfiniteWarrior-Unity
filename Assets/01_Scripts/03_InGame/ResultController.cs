@@ -28,6 +28,12 @@ public class ResultController : MonoBehaviour
 
     public void ShowResultPopup(int bestScore, int currentScore)
     {
+        StartCoroutine(DelayShowResultPopup(bestScore, currentScore));
+    }
+
+    IEnumerator DelayShowResultPopup(int bestScore, int currentScore)
+    {
+        yield return new WaitForSeconds(1.3f);
         if(currentScore > bestScore)
         {
             PlayerInfo.Instance.SetBestScore(currentScore);
