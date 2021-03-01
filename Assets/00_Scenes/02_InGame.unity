@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1978833}
   m_Layer: 8
   m_Name: BLOCK (2)
-  m_TagString: ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7933,6 +7933,7 @@ MonoBehaviour:
   scoreController: {fileID: 995858176}
   inGameCharacterFactory: {fileID: 2057240582}
   buttonController: {fileID: 891005062}
+  particleFactory: {fileID: 2057240583}
   grave: {fileID: 589726337}
   moveButton: {fileID: 1874288836}
   attackButton: {fileID: 574473088}
@@ -8380,6 +8381,7 @@ GameObject:
   - component: {fileID: 2057240580}
   - component: {fileID: 2057240579}
   - component: {fileID: 2057240582}
+  - component: {fileID: 2057240583}
   m_Layer: 0
   m_Name: FactoryService
   m_TagString: Untagged
@@ -8449,6 +8451,20 @@ MonoBehaviour:
   - {fileID: 8424138253284372968, guid: 797af8f1b5ee3804bab42ad45a1a3f1e, type: 3}
   - {fileID: 6356860967283108495, guid: 1b1c5ea26d11f7241946279761874f32, type: 3}
   parent: {fileID: 343901468}
+--- !u!114 &2057240583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057240578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7b035a86cbedc4881bf1b19134b602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpParticle: {fileID: 2376359883533454492, guid: 8cf0a1b2fd6afdb4d83574b1acb46928,
+    type: 3}
 --- !u!1 &2064167428
 GameObject:
   m_ObjectHideFlags: 0

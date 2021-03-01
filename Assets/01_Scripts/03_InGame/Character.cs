@@ -12,6 +12,8 @@ public class Character : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D characterCollider;
 
+    public Transform particlePosition;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -44,7 +46,7 @@ public class Character : MonoBehaviour
     public void Jump()
     {
         animator.SetTrigger("Jump");
-        playerRigidbody.AddForce(Vector2.up * 220.0f);
+        playerRigidbody.AddForce(Vector2.up * 5.2f, ForceMode2D.Impulse);
     }
 
     public void Idle()
@@ -57,6 +59,10 @@ public class Character : MonoBehaviour
         if (collision.collider.CompareTag("ground"))
         {
             InGameEventService.Instance.enterGroundEvent();
+            
+            ParticleSystem particle = ParticleFactory.Instance.CreateParticle(ParticleType.Jump);
+            particle.transform.position = particlePosition.position;
+            particle.transform.parent = collision.collider.gameObject.transform;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

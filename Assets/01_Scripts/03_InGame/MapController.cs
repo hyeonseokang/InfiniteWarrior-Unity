@@ -100,7 +100,7 @@ public class MapController : MonoBehaviour
         Vector3 targetPosition = moveObject.transform.position;
         targetPosition.x -= deltaMoveX;
         float value = 0;
-        float time = 0.2f;
+        float time = 0.1f;
         while (value < 1.0f)
         {
             value += 0.01f / time;

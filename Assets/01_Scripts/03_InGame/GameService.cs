@@ -12,6 +12,7 @@ public class GameService : MonoBehaviour
     public Score scoreController;
     public InGameCharacterFactory inGameCharacterFactory;
     public ButtonController buttonController;
+    public ParticleFactory particleFactory;
     public Grave grave;
 
     public Button moveButton;
