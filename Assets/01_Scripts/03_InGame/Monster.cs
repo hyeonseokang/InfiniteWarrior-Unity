@@ -32,6 +32,7 @@ public class Monster : MonoBehaviour, IMonster
     }
     public IEnumerator StartHitAnimation()
     {
+        yield return new WaitForSeconds(0.1f);
         for (int i = 0;i < 2; i++)
         {
             spriteRenderer.color = new Color(1.0f, 0.4f, 0.4f);
