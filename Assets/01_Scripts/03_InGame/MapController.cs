@@ -53,7 +53,7 @@ public class MapController : MonoBehaviour
         createObject.transform.position = createPosition;
         mapObjects.Add(createObject);
         monsterObjects.Add(monster);
-
+        
         RemoveObject(mapObjects[0], mapObjects);
         RemoveObject(monsterObjects[0], monsterObjects);
     }
@@ -78,7 +78,7 @@ public class MapController : MonoBehaviour
     public void RemoveObject(GameObject removeObject, List<GameObject> list)
     {
         list.Remove(removeObject);
-        Destroy(removeObject);
+        Destroy(removeObject, 1.0f);
     }
 
     private GameObject CreateRandomMonster(GameObject nullObject)
@@ -96,16 +96,24 @@ public class MapController : MonoBehaviour
 
     private IEnumerator MoveAnimation(GameObject moveObject)
     {
-        Vector3 firstPosition = moveObject.transform.position;
-        Vector3 targetPosition = moveObject.transform.position;
-        targetPosition.x -= deltaMoveX;
         float value = 0;
         float time = 0.1f;
-        while (value < 1.0f)
+        float moveCount = 0;
+        Vector3 movePosition;
+
+        while (value < time)
         {
-            value += 0.01f / time;
-            moveObject.transform.position = Vector3.Lerp(firstPosition, targetPosition, value);
-            yield return new WaitForSeconds(0.01f);
+            yield return null;
+            value += Time.deltaTime;
+            float positionX = deltaMoveX * Time.deltaTime / time;
+            moveCount += positionX;
+
+            movePosition = moveObject.transform.position;
+            moveObject.transform.Translate(new Vector3(-positionX, 0, 0));
         }
+
+        movePosition = moveObject.transform.position;
+        float adjustmentPositionX = (moveCount - deltaMoveX);
+        moveObject.transform.Translate(new Vector3(adjustmentPositionX, 0, 0));
     }
 }
