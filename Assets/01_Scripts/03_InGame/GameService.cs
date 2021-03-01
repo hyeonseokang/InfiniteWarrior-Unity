@@ -13,6 +13,7 @@ public class GameService : MonoBehaviour
     public InGameCharacterFactory inGameCharacterFactory;
     public ButtonController buttonController;
     public ParticleFactory particleFactory;
+    public CameraShake cameraShake;
     public Grave grave;
 
     public Button moveButton;
@@ -51,6 +52,8 @@ public class GameService : MonoBehaviour
             int score = scoreController.getScoreValue();
             resultController.ShowResultPopup(bestScore, score);
         };
+
+        InGameEventService.Instance.cameraShake += cameraShake.Shake;
     }
 
     public void AddClickEventMoveButton()

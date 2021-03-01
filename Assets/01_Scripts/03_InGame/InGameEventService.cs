@@ -13,10 +13,14 @@ public class InGameEventService : Singleton<InGameEventService>
     public delegate void DieCharacter();
     public DieCharacter dieCharacterEvent;
 
+    public delegate void CameraShake();
+    public CameraShake cameraShake;
+
     public void Clear()
     {
         hitCharacterEvent = null;
         enterGroundEvent = null;
         dieCharacterEvent = null;
+        cameraShake = null;
     }
 }

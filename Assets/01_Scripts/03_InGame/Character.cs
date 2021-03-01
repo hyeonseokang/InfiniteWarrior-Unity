@@ -67,18 +67,21 @@ public class Character : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("obstacle"))
+        if (collision.CompareTag("obstacle") || collision.CompareTag("monster"))
         {
             hp -= 1;
             InGameEventService.Instance.hitCharacterEvent();
+            InGameEventService.Instance.cameraShake();
         }
         else if(collision.CompareTag("dieObstacle"))
         {
             InGameEventService.Instance.dieCharacterEvent();
+            InGameEventService.Instance.cameraShake();
         }
     }
     public IEnumerator StartHitAnimation()
     {
+        InGameEventService.Instance.cameraShake();
         for (int i = 0;i < 5; i++)
         {
             spriteRenderer.color = new Color(1.0f, 0.4f, 0.4f);
