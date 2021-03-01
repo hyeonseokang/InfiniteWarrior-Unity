@@ -13,7 +13,7 @@ public class GameService : MonoBehaviour
     public InGameCharacterFactory inGameCharacterFactory;
     public ButtonController buttonController;
     public ParticleFactory particleFactory;
-    public CameraShake cameraShake;
+    public Shake cameraShake;
     public Grave grave;
 
     public Button moveButton;
@@ -27,6 +27,7 @@ public class GameService : MonoBehaviour
 
     private void Start()
     {
+        PlayerInfo.Instance.SetPlayCount(PlayerInfo.Instance.GetPlayCount() + 1);
         bool isReverse = PlayerInfo.Instance.GetIsReverse();
         buttonController.ChangeButtonPosition(isReverse);
 
@@ -53,7 +54,7 @@ public class GameService : MonoBehaviour
             resultController.ShowResultPopup(bestScore, score);
         };
 
-        InGameEventService.Instance.cameraShake += cameraShake.Shake;
+        InGameEventService.Instance.cameraShake += cameraShake.StartShake;
     }
 
     public void AddClickEventMoveButton()
