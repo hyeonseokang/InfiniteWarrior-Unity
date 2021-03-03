@@ -7882,6 +7882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleFactory: {fileID: 2057240579}
   monsterFactory: {fileID: 2057240580}
+  coinObject: {fileID: 8951440253920930023, guid: 60534f7cdf1a8374ea32ee453abf5e1d,
+    type: 3}
   mapObjects:
   - {fileID: 2084852131}
   - {fileID: 747565508}

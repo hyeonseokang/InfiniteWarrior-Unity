@@ -12,9 +12,16 @@ public class BalanceUI : MonoBehaviour
     private void Start()
     {
         SetBalacneText(PlayerInfo.Instance.GetBalance().ToString());    
+        InGameEventService.Instance.coinUpdateEvent += UpdateCoin;
     }
 
-    public void SetBalacneText(string text)
+    private void UpdateCoin()
+    {
+        PlayerInfo.Instance.SetBalance(PlayerInfo.Instance.GetBalance() + 1);
+        SetBalacneText(PlayerInfo.Instance.GetBalance().ToString());
+    }
+
+    private void SetBalacneText(string text)
     {
         balacneText.SetText(text);
     }

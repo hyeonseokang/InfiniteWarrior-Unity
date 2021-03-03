@@ -6,6 +6,7 @@ public class MapController : MonoBehaviour
 {
     public ObstacleFactory obstacleFactory;
     public MonsterFactory monsterFactory;
+    public GameObject coinObject;
     public List<GameObject> mapObjects;
     public List<GameObject> monsterObjects;
 
@@ -85,10 +86,15 @@ public class MapController : MonoBehaviour
     {
         int value = Random.Range(0, 100);
         GameObject monster = nullObject;
-        if (value > 50)
+        if (value > 80)
         {
             Destroy(nullObject.gameObject);
             monster = monsterFactory.CreateMonster(MonsterType.Monster1);
+        }
+        else if(value > 50)
+        {
+            Destroy(nullObject.gameObject);
+            monster = Instantiate(coinObject);
         }
 
         return monster;

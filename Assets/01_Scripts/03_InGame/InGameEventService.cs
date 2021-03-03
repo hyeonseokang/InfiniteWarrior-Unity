@@ -16,11 +16,15 @@ public class InGameEventService : Singleton<InGameEventService>
     public delegate void CameraShake();
     public CameraShake cameraShake;
 
+    public delegate void CoinUpdateEvent();
+    public CoinUpdateEvent coinUpdateEvent;
+
     public void Clear()
     {
         hitCharacterEvent = null;
         enterGroundEvent = null;
         dieCharacterEvent = null;
         cameraShake = null;
+        coinUpdateEvent = null;
     }
 }

@@ -78,6 +78,11 @@ public class Character : MonoBehaviour
             InGameEventService.Instance.dieCharacterEvent();
             InGameEventService.Instance.cameraShake();
         }
+        else if(collision.CompareTag("coin"))
+        {
+            InGameEventService.Instance.coinUpdateEvent();
+            Destroy(collision.gameObject);
+        }
     }
     public IEnumerator StartHitAnimation()
     {
