@@ -9,6 +9,7 @@ TagManager:
   - dieObstacle
   - character
   - monster
+  - coin
   layers:
   - Default
   - TransparentFX
