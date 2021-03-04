@@ -19,6 +19,7 @@ public class Monster : MonoBehaviour, IMonster
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        SetRandomAttackTime();
         Invoke("Attack", attackTime);
     }
     public void Attack()
@@ -28,6 +29,7 @@ public class Monster : MonoBehaviour, IMonster
     }
     public void Hit()
     {
+        CancelInvoke("AttackRayCast");
         StartCoroutine(StartHitAnimation());
     }
     public IEnumerator StartHitAnimation()
@@ -44,6 +46,11 @@ public class Monster : MonoBehaviour, IMonster
         gameObject.SetActive(false);
     }
 
+    private void SetRandomAttackTime()
+    {
+        attackTime = Random.Range(1, 4);
+    }
+
     private void AttackRayCast()
     {
         Vector3 rayPosition = transform.position;
@@ -52,14 +59,14 @@ public class Monster : MonoBehaviour, IMonster
         Debug.DrawRay(rayPosition, -transform.right * attackDistance, Color.red, 0.3f);
         if (hit)
         {
-            Debug.Log(hit.collider.tag);
             if (hit.collider.CompareTag("character"))
             {
                 Debug.Log("character 맞음");
                 InGameEventService.Instance.hitCharacterEvent();
             }
         }
-
+        
+        SetRandomAttackTime();
         Invoke("Attack", attackTime);
     }
 
