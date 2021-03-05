@@ -23,7 +23,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fa5ce1ab76bf3c94ead52b66b9cc3523, type: 2}
+  m_Motion: {fileID: 7400000, guid: fc375383fd2f7b5458e6dabf33958fc5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -101,7 +101,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 04abf58d6c393a847a8fbe50258d46e7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 32cfc7dabdd897a48a476ee1e5590664, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -129,7 +129,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d4f06a71b876ea948b41f2105ab5cf74, type: 2}
+  m_Motion: {fileID: 7400000, guid: 41f2ae698533a894bb2c651062553886, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -191,7 +191,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Character1
+  m_Name: Character3
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Jump

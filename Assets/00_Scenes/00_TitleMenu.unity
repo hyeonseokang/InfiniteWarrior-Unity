@@ -994,6 +994,7 @@ MonoBehaviour:
   characters:
   - {fileID: 8424138253284372979, guid: 797af8f1b5ee3804bab42ad45a1a3f1e, type: 3}
   - {fileID: 6356860967283108500, guid: 1b1c5ea26d11f7241946279761874f32, type: 3}
+  - {fileID: 7332343350013998666, guid: 1a7ee4f2ae8246941a76c66f6d6624fe, type: 3}
   character: {fileID: 130358773}
 --- !u!4 &636653828
 Transform:
