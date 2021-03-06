@@ -10,6 +10,8 @@ TagManager:
   - character
   - monster
   - coin
+  - delete
+  - fireball
   layers:
   - Default
   - TransparentFX

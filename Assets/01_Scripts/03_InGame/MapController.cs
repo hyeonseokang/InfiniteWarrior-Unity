@@ -6,6 +6,8 @@ public class MapController : MonoBehaviour
 {
     public ObstacleFactory obstacleFactory;
     public MonsterFactory monsterFactory;
+    public FireballFactory fireballFactory;
+    private float createMapCount = 0;
     public GameObject coinObject;
     public List<GameObject> mapObjects;
     public List<GameObject> monsterObjects;
@@ -14,6 +16,11 @@ public class MapController : MonoBehaviour
 
     public Transform parent;
     public GameObject blockObject;
+
+    private void Start()
+    {
+        StartCoroutine(CreateRandomFireball());
+    }
     public void MoveMap()
     {
         for (int i = 0; i < mapObjects.Count; i++)
@@ -29,6 +36,7 @@ public class MapController : MonoBehaviour
 
     public void CreateRandomMap()
     {
+        createMapCount++;
         int lastIndex = mapObjects.Count - 1;
         Vector3 createPosition = mapObjects[lastIndex].transform.position;
         createPosition.x += deltaMoveX;
@@ -121,5 +129,22 @@ public class MapController : MonoBehaviour
         movePosition = moveObject.transform.position;
         float adjustmentPositionX = (moveCount - deltaMoveX);
         moveObject.transform.Translate(new Vector3(adjustmentPositionX, 0, 0));
+    }
+
+    IEnumerator CreateRandomFireball()
+    {
+        while(createMapCount < 20)
+        {
+            yield return null;
+        }
+        Debug.LogWarning("탈출 성공");
+
+        while(true)
+        {
+            float randomTime = Random.Range(0, 15);
+            yield return new WaitForSeconds(randomTime);
+
+            fireballFactory.CreateFireball();
+        }
     }
 }

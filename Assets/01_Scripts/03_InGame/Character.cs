@@ -46,7 +46,7 @@ public class Character : MonoBehaviour
     public void Jump()
     {
         animator.SetTrigger("Jump");
-        playerRigidbody.AddForce(Vector2.up * 5.2f, ForceMode2D.Impulse);
+        playerRigidbody.AddForce(Vector2.up * 5.5f, ForceMode2D.Impulse);
     }
 
     public void Idle()
