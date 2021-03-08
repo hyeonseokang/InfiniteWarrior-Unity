@@ -10,7 +10,7 @@ public interface IMonster
 public class Monster : MonoBehaviour, IMonster
 {
     public float attackTime = 3.0f;
-    public float attackDistance = 5.0f;
+    public float attackDistance;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -55,7 +55,7 @@ public class Monster : MonoBehaviour, IMonster
     {
         Vector3 rayPosition = transform.position;
         rayPosition.x -= 1.0f;
-        RaycastHit2D hit = Physics2D.Raycast(rayPosition, -transform.right, attackDistance*1000);
+        RaycastHit2D hit = Physics2D.Raycast(rayPosition, -transform.right, attackDistance);
         Debug.DrawRay(rayPosition, -transform.right * attackDistance, Color.red, 0.3f);
         if (hit)
         {
