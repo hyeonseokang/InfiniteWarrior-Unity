@@ -33,14 +33,17 @@ public class MainManager : MonoBehaviour
     }
     public void onClickShopButton()
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         shopPanel.SetActive(true);
     }
     public void onClickPlayButton()
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         SceneManager.LoadScene("02_InGame");
     }
     public void onClickOptionButton()
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         optionPanel.SetActive(true);
     }
 }

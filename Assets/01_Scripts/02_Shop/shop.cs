@@ -59,10 +59,12 @@ public class shop : MonoBehaviour
     }
     public void onClickExitShop()
     {//나가기 버튼 클릭
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         shopPanel.SetActive(false);
     }
     public void onClickBuyingButton()
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         item item = items[currentSelectedCharacter];
         switch (item.state)
         {
@@ -105,6 +107,7 @@ public class shop : MonoBehaviour
 
     public void updateSelectedItem(int id)
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         items[currentSelectedCharacter].setOutLine(false);
 
         currentSelectedCharacter = id;

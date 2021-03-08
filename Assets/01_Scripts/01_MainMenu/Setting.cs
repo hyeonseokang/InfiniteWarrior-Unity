@@ -19,35 +19,40 @@ public class Setting : MonoBehaviour
     }
     public void onClickADButton()
     {
-
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
     }
     
     public void onChangeKeyTypeToggle1(Button button)
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         keyChangeSelectImage.transform.position = buttonTransform1.position;
         PlayerInfo.Instance.SetIsButtonReverse(false);
     }
 
     public void onChangeKeyTypeToggle2(Button button)
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         keyChangeSelectImage.transform.position = buttonTransform2.position;
         PlayerInfo.Instance.SetIsButtonReverse(true);
     }
     public void onChangeSFXToggle(Toggle toggle)
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         SoundManager.Instance.SetMuteSFX(!toggle.isOn);
     }
     public void onClickBGMButton(Toggle toggle)
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         SoundManager.Instance.SetMuteBGM(!toggle.isOn);
     }
     public void onChangeVibeToggle(Toggle toggle)
     {
-        
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
 
     }
     public void onClickExitButton()
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         settingPanel.SetActive(false);
     }
 }

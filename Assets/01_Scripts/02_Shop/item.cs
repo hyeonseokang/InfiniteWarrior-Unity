@@ -28,6 +28,7 @@ public class item : MonoBehaviour
     }
     public void OnClickItem()
     {
+        
         shoppingManager.updateSelectedItem(id);
     }
 
