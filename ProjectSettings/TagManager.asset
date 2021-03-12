@@ -12,6 +12,7 @@ TagManager:
   - coin
   - delete
   - fireball
+  - fireballSound
   layers:
   - Default
   - TransparentFX

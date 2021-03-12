@@ -5,6 +5,13 @@ using UnityEngine;
 public enum SFX
 {
     ButtonClick,
+    BreakBlock,
+    Coin,
+    FireBall,
+    GameOver,
+    Hit,
+    ScoreUp,
+    Warning,
 }
 
 public class SoundManager : Singleton<SoundManager>
@@ -45,9 +52,21 @@ public class SoundManager : Singleton<SoundManager>
         bgmAudioSource.Play();
     }
 
-    public void PlaySFX(SFX sfx)
+    public void StopBGM()
     {
-        sfxAudioSource.PlayOneShot(sfxAudioClips[(int)sfx]);
+        bgmAudioSource.Stop();
+    }
+
+    public void PlaySFX(SFX sfx, float volume = 1.0f, float time = 0.0f)
+    {
+        sfxAudioSource.volume = volume;
+        StartCoroutine(PlaySFX(sfxAudioClips[(int)sfx], time));
+    }
+
+    private IEnumerator PlaySFX(AudioClip audio, float time)
+    {
+        yield return new WaitForSeconds(time);
+        sfxAudioSource.PlayOneShot(audio);
     }
 
     public void SetMuteBGM(bool isMute)

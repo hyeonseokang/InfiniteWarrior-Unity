@@ -26,6 +26,7 @@ public class FireballFactory : FactoryMethod
 
     IEnumerator StartWarningAnimation(GameObject fireball)
     {
+        SoundManager.Instance.PlaySFX(SFX.Warning, 0.1f);
         Vector3 warningPosition = warningUI.transform.position;
         warningPosition.y = fireball.transform.position.y;
         warningUI.transform.position = warningPosition;

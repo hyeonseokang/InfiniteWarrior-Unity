@@ -18,16 +18,20 @@ public class ResultController : MonoBehaviour
     {
         homeButton.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlayBGM();
             SceneManager.LoadScene("01_MainMenu");
         });
         retryButton.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlayBGM();
             SceneManager.LoadScene("02_InGame");
         });
     }
 
     public void ShowResultPopup(int bestScore, int currentScore)
     {
+        SoundManager.Instance.PlaySFX(SFX.GameOver);
+        SoundManager.Instance.StopBGM();
         StartCoroutine(DelayShowResultPopup(bestScore, currentScore));
     }
 
@@ -56,8 +60,9 @@ public class ResultController : MonoBehaviour
 
 
     //스코어 카운팅
-    IEnumerator CountScoreAnimation(float targetScore) {
-
+    IEnumerator CountScoreAnimation(float targetScore)
+    {
+        SoundManager.Instance.PlaySFX(SFX.ScoreUp);
         float curScore = 0;
         float t = 1.0f;
         float offset = (targetScore - curScore) / t;

@@ -22,6 +22,8 @@ public class BreakBlock : MonoBehaviour
             isEnable = false;
             shake.StartShake();
             Invoke("Break", 0.3f);
+            
+            SoundManager.Instance.PlaySFX(SFX.BreakBlock);
         }
     }
 

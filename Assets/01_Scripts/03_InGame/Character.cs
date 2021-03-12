@@ -11,7 +11,6 @@ public class Character : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private SpriteRenderer spriteRenderer;
     private Collider2D characterCollider;
-
     public Transform particlePosition;
 
     private void Awake()
@@ -36,6 +35,7 @@ public class Character : MonoBehaviour
         {
             if (hit.collider.CompareTag("monster"))
             {
+                SoundManager.Instance.PlaySFX(SFX.Hit, volume:0.1f);
                 GameObject checkObject = hit.collider.gameObject;
                 IMonster monster = Monster.CheckMonster(checkObject);
                 monster.Hit();
@@ -69,6 +69,7 @@ public class Character : MonoBehaviour
     {
         if (collision.CompareTag("obstacle") || collision.CompareTag("monster"))
         {
+            SoundManager.Instance.PlaySFX(SFX.Hit);
             hp -= 1;
             InGameEventService.Instance.hitCharacterEvent();
             InGameEventService.Instance.cameraShake();
@@ -80,6 +81,7 @@ public class Character : MonoBehaviour
         }
         else if(collision.CompareTag("coin"))
         {
+            SoundManager.Instance.PlaySFX(SFX.Coin, DefineService.Sound.defaultCoin);
             InGameEventService.Instance.coinUpdateEvent();
             Destroy(collision.gameObject);
         }

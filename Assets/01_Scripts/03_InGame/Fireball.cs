@@ -17,5 +17,9 @@ public class Fireball : MonoBehaviour
         {
             Destroy(this.gameObject);
         }    
+        else if(other.CompareTag("fireballSound"))
+        {
+            SoundManager.Instance.PlaySFX(SFX.FireBall);
+        }
     }
 }
