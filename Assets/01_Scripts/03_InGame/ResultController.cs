@@ -38,10 +38,6 @@ public class ResultController : MonoBehaviour
     IEnumerator DelayShowResultPopup(int bestScore, int currentScore)
     {
         yield return new WaitForSeconds(1.1f);
-        if(currentScore > bestScore)
-        {
-            PlayerInfo.Instance.SetBestScore(currentScore);
-        }
         Init(bestScore, currentScore);
         ShowResultPopUp();
     }
@@ -50,7 +46,7 @@ public class ResultController : MonoBehaviour
     {
         // 요 부분 수정 하면됨
         bestScoreText.SetText(bestScore.ToString());
-        StartCoroutine(CountScoreAnimation(currentScore));//코루틴 시작
+        StartCoroutine(CountScoreAnimation(currentScore, bestScore));//코루틴 시작
     }
 
     private void ShowResultPopUp()
@@ -60,7 +56,7 @@ public class ResultController : MonoBehaviour
 
 
     //스코어 카운팅
-    IEnumerator CountScoreAnimation(float targetScore)
+    IEnumerator CountScoreAnimation(float targetScore, int bestScore)
     {
         SoundManager.Instance.PlaySFX(SFX.ScoreUp);
         float curScore = 0;
@@ -73,6 +69,22 @@ public class ResultController : MonoBehaviour
             yield return null;
         }        
         currentScoreText.SetText(targetScore.ToString());
+
+        
+        if(targetScore > bestScore)
+        {
+            PlayerInfo.Instance.SetBestScore((int)targetScore);
+            bestScoreText.fontSize = 80.0f;
+            bestScoreText.text = ((int)targetScore).ToString();
+            for(int i=0;i<2;i++)
+            {
+                bestScoreText.color = Color.red;
+                yield return new WaitForSeconds(0.2f);
+                bestScoreText.color = Color.white;
+                yield return new WaitForSeconds(0.2f);
+            }
+            bestScoreText.color = Color.red;
+        }
     }
 
 }
