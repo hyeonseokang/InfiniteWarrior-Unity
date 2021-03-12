@@ -22,6 +22,10 @@ public class Title : MonoBehaviour
         {
             MoveNextScene();
         }
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            AdsService.Instance.ShowAd();
+        }
     }
 
     public void MoveNextScene()

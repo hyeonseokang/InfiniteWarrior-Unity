@@ -632,10 +632,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 22e1018c-c645-44d5-aa10-af2cc384ec33
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: InfiniteWarrior
+  organizationId: kanghyeonseo
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

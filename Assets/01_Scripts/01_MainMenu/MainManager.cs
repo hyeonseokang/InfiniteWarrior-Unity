@@ -29,7 +29,10 @@ public class MainManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            AdsService.Instance.ShowAd();
+        }
     }
     public void onClickShopButton()
     {

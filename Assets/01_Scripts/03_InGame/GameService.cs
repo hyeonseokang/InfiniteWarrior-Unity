@@ -47,6 +47,10 @@ public class GameService : MonoBehaviour
 
         InGameEventService.Instance.dieCharacterEvent += () =>
         {
+            int ad = Random.Range(0, 10);
+            if (ad > 8)
+                AdsService.Instance.ShowAd();
+                
             VibrateManager.Instance.PlayVibration();
             grave.StartActive();
             characterController.character.gameObject.SetActive(false);
