@@ -48,7 +48,7 @@ public class Setting : MonoBehaviour
     public void onChangeVibeToggle(Toggle toggle)
     {
         SoundManager.Instance.PlaySFX(SFX.ButtonClick);
-
+        VibrateManager.Instance.SetMute(!toggle.isOn);
     }
     public void onClickExitButton()
     {

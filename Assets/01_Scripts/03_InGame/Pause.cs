@@ -35,24 +35,28 @@ public class Pause : MonoBehaviour
     
     public void onChangeSFXToggle(Toggle toggle)
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         SoundManager.Instance.SetMuteSFX(!toggle.isOn);
     }
     public void onClickBGMToggle(Toggle toggle)
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         SoundManager.Instance.SetMuteBGM(!toggle.isOn);
     }
     public void onChangeVibeToggle(Toggle toggle)
     {
-
-
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
+        VibrateManager.Instance.SetMute(!toggle.isOn);
     }
     public void onClickHomeButton()
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         ingame.Continue();
         SceneManager.LoadScene("01_MainMenu");
     }
     public void onClickExitButton()
     {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         ingame.Continue();
         pausePanel.SetActive(false);
     }

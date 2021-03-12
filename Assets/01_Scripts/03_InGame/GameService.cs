@@ -47,6 +47,7 @@ public class GameService : MonoBehaviour
 
         InGameEventService.Instance.dieCharacterEvent += () =>
         {
+            VibrateManager.Instance.PlayVibration();
             grave.StartActive();
             characterController.character.gameObject.SetActive(false);
             int bestScore = PlayerInfo.Instance.GetBestScore();
