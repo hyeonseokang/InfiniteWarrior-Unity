@@ -36,7 +36,7 @@ public class MenuCharacter : MonoBehaviour
         string name = PlayerInfo.Instance.GetCharacter();
         int index = GetCharacterIndex();
 
-        character.gameObject.AddComponent<Animator>().runtimeAnimatorController = characters[index].GetComponent<Animator>().runtimeAnimatorController;
+        character.gameObject.GetComponent<Animator>().runtimeAnimatorController = characters[index].GetComponent<Animator>().runtimeAnimatorController;
         character.sprite = characters[index].sprite;
     }
 }
