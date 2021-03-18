@@ -16,6 +16,7 @@ public class MainManager : MonoBehaviour
 
     public GameObject shopPanel;
     public GameObject optionPanel;
+    public GameObject coinShopPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +32,12 @@ public class MainManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.S))
         {
-            AdsService.Instance.ShowAd();
+            TestAds();
         }
+    }
+    public void TestAds()
+    {
+        AdsService.Instance.ShowAd();
     }
     public void onClickShopButton()
     {
@@ -48,5 +53,11 @@ public class MainManager : MonoBehaviour
     {
         SoundManager.Instance.PlaySFX(SFX.ButtonClick);
         optionPanel.SetActive(true);
+    }
+
+    public void onClickCoinShopButton()
+    {
+        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
+        coinShopPanel.SetActive(true);
     }
 }
