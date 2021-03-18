@@ -8,6 +8,7 @@ public class Setting : MonoBehaviour
     public Image keyChangeSelectImage;
     public Transform buttonTransform1;
     public Transform buttonTransform2;
+    public Button adButton;
 
     private void Start()
     {
@@ -15,11 +16,17 @@ public class Setting : MonoBehaviour
         if (isReverse == true)
         {
             keyChangeSelectImage.transform.position = buttonTransform2.position;
-        }   
+        }
+
+        if (PlayerInfo.Instance.GetIsAds() == false)
+        {
+            adButton.gameObject.SetActive(false);
+        }
     }
     public void onClickADButton()
     {
-        SoundManager.Instance.PlaySFX(SFX.ButtonClick);
+        PlayerInfo.Instance.SetIsAds(false);
+        adButton.gameObject.SetActive(false);
     }
     
     public void onChangeKeyTypeToggle1(Button button)

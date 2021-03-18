@@ -13,6 +13,7 @@ public class SaveData
     public string character;
     public bool[] purchasedCharacters;
     public bool isButtonReverse;
+    public bool isAds;
 
     public static SaveData GetEmptyData()
     {
@@ -26,6 +27,7 @@ public class SaveData
         data.purchasedCharacters[1] = false;
         data.purchasedCharacters[2] = false;
         data.isButtonReverse = false;
+        data.isAds = true;
         return data;
     }
 }

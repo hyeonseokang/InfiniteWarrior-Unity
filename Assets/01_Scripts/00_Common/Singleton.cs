@@ -9,6 +9,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         get
         {
+            return GetInstance();
+        }
+    }
+    public static T GetInstance()
+    {
             if (instance == null)
             {
                 instance = (T)FindObjectOfType(typeof(T));
@@ -21,6 +26,5 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 DontDestroyOnLoad(instance);
             }
             return instance;
-        }
     }
 }

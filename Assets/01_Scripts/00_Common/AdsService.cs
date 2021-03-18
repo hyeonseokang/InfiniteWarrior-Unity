@@ -1,20 +1,48 @@
-﻿using System.Collections;
+﻿#define TESTAD
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using GoogleMobileAds.Api;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
 public class AdsService : Singleton<AdsService>
 {
-    private void Awake()
+    private InterstitialAd interstitial;
+
+    private void Start()
     {
-        Advertisement.Initialize("4047168", true);
+        AdsService.GetInstance();
+        MobileAds.Initialize(initStatus => { RequestInterstitial();});
     }
+
+    private void RequestInterstitial()
+    {
+        #if TESTAD
+            Debug.Log("해햇");
+            string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        #elif UNITY_ANDROID
+            string adUnitId = "ca-app-pub-9504240550542955~9042069665";
+        #else
+            string adUnitId = "unexpected_platform";
+        #endif
+
+        // Initialize an InterstitialAd.
+        this.interstitial = new InterstitialAd(adUnitId);
+          // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the interstitial with the request.
+        this.interstitial.LoadAd(request);
+    }
+
     public void ShowAd()
     {
-        Debug.Log("광고시작 : " + Advertisement.IsReady());
-        if (Advertisement.IsReady())
+        if(PlayerInfo.Instance.GetIsAds() == false)
+            return;
+            
+        if (this.interstitial.IsLoaded())
         {
-            Advertisement.Show("video");
+            this.interstitial.Show();
         }
     }
 }

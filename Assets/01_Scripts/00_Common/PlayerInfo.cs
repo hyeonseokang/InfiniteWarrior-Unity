@@ -68,6 +68,17 @@ public class PlayerInfo : Singleton<PlayerInfo>
         return data.isButtonReverse;
     }
 
+    public void SetIsAds(bool isAds)
+    {
+        data.isAds = isAds;
+        SaveService.Instance.Save(data);
+    }
+
+    public bool GetIsAds()
+    {
+        return data.isAds;
+    }
+
     private void Awake()
     {
         data = SaveService.Instance.Load();

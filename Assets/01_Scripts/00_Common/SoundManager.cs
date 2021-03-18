@@ -24,7 +24,6 @@ public class SoundManager : Singleton<SoundManager>
 
     private void Start()
     {
-
         if (bgmAudioSource == null)
         {
             bgmAudioSource = CreateAudioSource("bgmAudioSource");
