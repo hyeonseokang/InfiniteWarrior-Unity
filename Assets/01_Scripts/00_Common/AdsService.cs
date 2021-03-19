@@ -1,4 +1,4 @@
-﻿#define TESTAD
+﻿#undef TESTAD
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ public class AdsService : Singleton<AdsService>
     {
         if(PlayerInfo.Instance.GetIsAds() == false)
             return;
-            
+
         if (this.interstitial.IsLoaded())
         {
             this.interstitial.Show();

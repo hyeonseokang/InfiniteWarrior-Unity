@@ -25,10 +25,13 @@ public class Setting : MonoBehaviour
     }
     public void onClickADButton()
     {
+        Invoke("ClickAdButtonInvoke", 0.1f);
+    }
+    private void ClickAdButtonInvoke()
+    {
         PlayerInfo.Instance.SetIsAds(false);
         adButton.gameObject.SetActive(false);
     }
-    
     public void onChangeKeyTypeToggle1(Button button)
     {
         SoundManager.Instance.PlaySFX(SFX.ButtonClick);
