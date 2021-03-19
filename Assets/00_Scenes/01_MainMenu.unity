@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &81308648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4031,6 +4031,7 @@ GameObject:
   - component: {fileID: 769757422}
   - component: {fileID: 769757421}
   - component: {fileID: 769757420}
+  - component: {fileID: 769757423}
   m_Layer: 5
   m_Name: 1990 won
   m_TagString: Untagged
@@ -4055,9 +4056,9 @@ RectTransform:
   m_Father: {fileID: 2115837427}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -535.2988}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 661.50085, y: 170.5976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &769757420
@@ -4102,18 +4103,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 769757421}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1648514033}
-        m_MethodName: TestAds
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &769757421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4151,6 +4141,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769757418}
   m_CullTransparentMesh: 0
+--- !u!114 &769757423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769757418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: 3000coin
+  buttonType: 0
+  consumePurchase: 1
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  priceText: {fileID: 0}
 --- !u!1 &783087464
 GameObject:
   m_ObjectHideFlags: 0
@@ -5626,9 +5640,9 @@ RectTransform:
   m_Father: {fileID: 2115837427}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -335.2988}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 661.50085, y: 170.5976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005973961
@@ -7995,6 +8009,7 @@ GameObject:
   - component: {fileID: 1459560474}
   - component: {fileID: 1459560473}
   - component: {fileID: 1459560472}
+  - component: {fileID: 1459560475}
   m_Layer: 5
   m_Name: 3990 won
   m_TagString: Untagged
@@ -8019,9 +8034,9 @@ RectTransform:
   m_Father: {fileID: 2115837427}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -735.2988}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 661.50085, y: 170.5976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1459560472
@@ -8104,6 +8119,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459560470}
   m_CullTransparentMesh: 0
+--- !u!114 &1459560475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459560470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: 10000coin
+  buttonType: 0
+  consumePurchase: 1
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  priceText: {fileID: 0}
 --- !u!1 &1490244009
 GameObject:
   m_ObjectHideFlags: 0
