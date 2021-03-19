@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class shop : MonoBehaviour
 {
     public int currentPlayerCharacter;//현재 
     public int currentSelectedCharacter;//선택된 캐릭터
+    public Text explanText;
 
     public MenuCharacter menuCharacter;
 
@@ -112,6 +114,7 @@ public class shop : MonoBehaviour
 
         currentSelectedCharacter = id;
         items[currentSelectedCharacter].setOutLine(true);
+        explanText.text = items[currentSelectedCharacter].itemExplan;
 
         ItemState s = items[id].state;
         if (s == ItemState.none)

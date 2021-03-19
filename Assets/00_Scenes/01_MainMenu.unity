@@ -1724,6 +1724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlayerCharacter: 0
   currentSelectedCharacter: 0
+  explanText: {fileID: 1376834072}
   menuCharacter: {fileID: 1064429281}
   items:
   - {fileID: 1716133213}
@@ -4000,6 +4001,7 @@ MonoBehaviour:
   shoppingManager: {fileID: 347634719}
   id: 2
   itemname: character3
+  itemExplan: "\uD558\uD2B8 2 \uC99D\uAC00"
   price: 2000
   speed: 0
   state: 0
@@ -6911,6 +6913,7 @@ MonoBehaviour:
   shoppingManager: {fileID: 347634719}
   id: 1
   itemname: character2
+  itemExplan: "\uD558\uD2B8 1 \uC99D\uAC00"
   price: 1000
   speed: 0
   state: 0
@@ -9061,6 +9064,7 @@ MonoBehaviour:
   shoppingManager: {fileID: 347634719}
   id: 0
   itemname: character1
+  itemExplan: "\uAE30\uBCF8 \uCE90\uB9AD\uD130"
   price: 0
   speed: 0
   state: 0

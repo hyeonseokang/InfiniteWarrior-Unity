@@ -11,6 +11,7 @@ public class item : MonoBehaviour
 
     public int id;
     public string itemname;
+    public string itemExplan;
     public int price;
     public int speed;
     public ItemState state = ItemState.none;
