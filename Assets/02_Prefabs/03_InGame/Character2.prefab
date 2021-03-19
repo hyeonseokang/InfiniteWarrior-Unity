@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de73937c38e17f4c9433403f0547672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 4
   particlePosition: {fileID: 7672741735398177122}
 --- !u!95 &6356860967283108496
 Animator:

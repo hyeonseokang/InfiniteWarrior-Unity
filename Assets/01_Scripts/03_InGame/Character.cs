@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    protected int hp = 3;
+    public int hp = 3;
     private float attackDistance = 1.0f;
 
     private Animator animator;

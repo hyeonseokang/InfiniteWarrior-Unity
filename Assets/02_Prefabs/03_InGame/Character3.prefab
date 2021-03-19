@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de73937c38e17f4c9433403f0547672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 5
   particlePosition: {fileID: 6305780308000400828}
 --- !u!95 &7332343350013998670
 Animator:
