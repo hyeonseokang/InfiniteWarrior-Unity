@@ -1,4 +1,4 @@
-﻿#undef TESTAD
+﻿#define TESTAD
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ public class AdsService : Singleton<AdsService>
             Debug.Log("해햇");
             string adUnitId = "ca-app-pub-3940256099942544/1033173712";
         #elif UNITY_ANDROID
-            string adUnitId = "ca-app-pub-9504240550542955~9042069665";
+            string adUnitId = "ca-app-pub-3115390690170379~8834966356";
         #else
             string adUnitId = "unexpected_platform";
         #endif

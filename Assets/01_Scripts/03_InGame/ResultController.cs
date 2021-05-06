@@ -40,6 +40,11 @@ public class ResultController : MonoBehaviour
         yield return new WaitForSeconds(1.1f);
         Init(bestScore, currentScore);
         ShowResultPopUp();
+        yield return new WaitForSeconds(0.5f);
+        
+        int ad = Random.Range(0, 10);
+        if (ad > 8)
+            AdsService.Instance.ShowAd();
     }
 
     private void Init(int bestScore, int currentScore)

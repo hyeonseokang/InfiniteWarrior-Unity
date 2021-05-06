@@ -48,7 +48,7 @@ public class GameService : MonoBehaviour
         InGameEventService.Instance.dieCharacterEvent += () =>
         {
             int ad = Random.Range(0, 10);
-            if (ad > 8)
+            if (ad > 0)
                 AdsService.Instance.ShowAd();
                 
             VibrateManager.Instance.PlayVibration();
