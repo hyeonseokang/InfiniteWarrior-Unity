@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - obstacle
+  - ground
+  - dieObstacle
+  - character
+  - monster
+  - coin
+  - delete
+  - fireball
+  - fireballSound
   layers:
   - Default
   - TransparentFX
@@ -13,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ground
   - 
   - 
   - 
@@ -40,4 +49,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: effect
+    uniqueID: 573587661
+    locked: 0
+  - name: ui
+    uniqueID: 2787148877
     locked: 0
