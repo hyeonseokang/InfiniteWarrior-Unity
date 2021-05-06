@@ -1,4 +1,4 @@
-﻿#define TESTAD
+﻿#undef TESTAD
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,10 +18,12 @@ public class AdsService : Singleton<AdsService>
 
     private void RequestInterstitial()
     {
+        Debug.Log("광고 시작");
         #if TESTAD
             Debug.Log("해햇");
             string adUnitId = "ca-app-pub-3940256099942544/1033173712";
         #elif UNITY_ANDROID
+            Debug.Log("광고 시작2");
             string adUnitId = "ca-app-pub-3115390690170379~8834966356";
         #else
             string adUnitId = "unexpected_platform";

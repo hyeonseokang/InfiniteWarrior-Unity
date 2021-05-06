@@ -74,6 +74,14 @@ public class Character : MonoBehaviour
             InGameEventService.Instance.hitCharacterEvent();
             InGameEventService.Instance.cameraShake();
         }
+        else if(collision.CompareTag("fireball"))
+        {
+            SoundManager.Instance.PlaySFX(SFX.Hit);
+            hp -= 1;
+            InGameEventService.Instance.hitCharacterEvent();
+            InGameEventService.Instance.cameraShake();
+            Destroy(collision.gameObject);
+        }
         else if(collision.CompareTag("dieObstacle"))
         {
             InGameEventService.Instance.dieCharacterEvent();
